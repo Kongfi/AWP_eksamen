@@ -21,7 +21,8 @@ app.use(express.static('../frontend/build'));
 const db = require('./db.js')(mongoose);
 
 let openPaths = [
-    { url: '/api/users/authenticate', methods: ['POST'] }
+    { url: '/api/users/authenticate', methods: ['POST'] },
+    { url: /^\/(?!api\/).*/, methods: ['GET']}
 ];
 
 // validate
